@@ -8,7 +8,7 @@ public interface CallBack {
     /**
      * model处理逻辑：成功回调
      */
-    void onSuccess();
+    void onSuccess(Object object);
     /**
      * model处理逻辑：失败回调
      */

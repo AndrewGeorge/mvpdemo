@@ -1,5 +1,7 @@
 package com.example.mvpdemo.view;
 
+import com.example.mvpdemo.Bean.BaseRequest;
+
 /**
  * Created by Administrator on 2016/11/21 0021.
  */
@@ -18,20 +20,16 @@ public interface LoginView {
      * 显示登录的结果
      * @param result
      */
-    void showResult(String result);
+    void showResult(Object result);
     /**
      * 显示加载错误
      * @param err 错误内容
      */
     void showErr(String err);
+
     /**
-     * 获得界面上用户名的值
+     *返回请求参数
      * @return
      */
-    String getUsername();
-    /**
-     * 获得界面上密码的值
-     * @return
-     */
-    String getPassword();
+  BaseRequest getRequestData();
 }

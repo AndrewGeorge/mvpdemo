@@ -19,16 +19,17 @@ public class LoginPresenter {
     //登录
     public void login(){
         loginView.showLoding("正在登录中....");
-        userModel.login(loginView.getUsername(), loginView.getPassword(), new CallBack() {
+        userModel.login(loginView.getRequestData(), new CallBack() {
+
             @Override
-            public void onSuccess() {
-                loginView.showResult("登录成功");
+            public void onSuccess(Object object) {
+                loginView.showResult(object);
                 loginView.hideLoding();
             }
             @Override
             public void onFilure(String fail) {
                 loginView.hideLoding();
-                loginView.showErr(fail);
+                loginView.showErr("登录失败");
             }
         });
     }
